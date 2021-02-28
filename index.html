@@ -1,251 +1,251 @@
 <html>
  <style type="text/css">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+html,
 body {
-  background-color: white;
-  font-family: 'Lato', sans-serif;
+  min-width: 290px;
+  color: #4d4e53;
+  background-color: #ffffff;
+  font-family: 'Open Sans', Arial, sans-serif;
+  line-height: 1.5;
 }
 
-.container {
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  justify-content: center;
-  height: 200px;
-}
-
-.space{
-height: 100px;
-}
-#page-wrapper {
-  position: relative;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  color: #000;
-  text-decoration: none;
-}
-header {
+#navbar {
   position: fixed;
-  top: 0;
-  min-height: 75px;
-  padding: 0px 20px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: white;
-}
-
-@media (max-width: 600px) {
-  header {
-    flex-wrap: wrap;
-  }
-}
-.logo {
-  width: 60vw;
-}
-
-@media (max-width: 650px) {
-  .logo {
-    margin-top: 15px;
-    width: 100%;
-    position: relative;
-  }
-}
-
-.logo > img {
-  width: 100%;
+  min-width: 290px;
+  top: 0px;
+  left: 0px;
+  width: 300px;
   height: 100%;
-  max-width: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-right: solid;
+  border-color: rgba(0, 22, 22, 0.4);
+}
+
+header {
+  color: black;
+  margin: 10px;
   text-align: center;
-  margin-left: 20px;
+  font-size: 1.8em;
+  font-weight: thin;
 }
 
-@media (max-width: 650px) {
-  .logo > img {
-    margin: 0 auto;
-  }
-}
-nav {
-  font-weight: 400;
+#main-doc header {
+  text-align: left;
+  margin: 0px;
 }
 
-@media (max-width: 650px) {
-  nav {
-    margin-top: 10px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 0 50px;
-  }
-  nav li {
-    padding-bottom: 5px;
-  }
+#navbar ul {
+  height: 88%;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-nav > ul {
-  width: 35vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-@media (max-width: 650px) {
-  nav > ul {
-    flex-direction: column;
-  }
-}
-#ok {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 200px;
-  margin-top: 50px;
-}
-
-#ok > h2 {
-  margin-bottom: 20px;
-  word-wrap: break-word;
-}
-
-#ok input[type='email'] {
-  max-width: 275px;
-  width: 100%;
-  padding: 5px;
-}
-
-#ok input[type='submit'] {
-  max-width: 150px;
-  width: 100%;
-  height: 30px;
-  margin: 15px 0;
-  border: 0;
-  background-color: #f1c40f;
-}
-
-#ok input[type='submit']:hover {
-  background-color: orange;
-  transition: background-color 1s;
-}
-
-@media (max-width: 650px) {
-  #ok {
-    margin-top: 120px;
-  }
-}
-#products {
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-}
-
-#products > iframe {
-  max-width: 560px;
+#navbar li {
+  color: #4d4e53;
+  border-top: 1px solid;
+  list-style: none;
+  position: relative;
   width: 100%;
 }
 
-#price contact-us{
-  display: flex;
-  flex-direction: column;
- 
-  
-  height: 500px;
-  width: 60vw;
+#navbar a {
+  display: block;
+  padding: 10px 30px;
+  color: #4d4e53;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#main-doc {
+  position: absolute;
+  margin-left: 310px;
   padding: 20px;
-  margin-top: 0px;
+  margin-bottom: 110px;
 }
-@media (max-width: 550px) {
-  #price contact-us {
-    width: 100%;
-    text-align: center;
+
+section article {
+  color: #4d4e53;
+  margin: 15px;
+  font-size: 0.96em;
+}
+
+section li {
+  margin: 15px 0px 0px 20px;
+}
+
+@media only screen and (max-width: 815px) {
+  /* For mobile phones: */
+  #navbar ul {
+    border: 1px solid;
+    height: 207px;
+  }
+
+  #navbar {
+    background-color: white;
+    position: absolute;
+    top: 0;
     padding: 0;
-    height: 150px;
+    margin: 0;
+    width: 100%;
+    max-height: 275px;
+    border: none;
+    z-index: 1;
+    border-bottom: 2px solid;
+  }
+
+  #main-doc {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 270px;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  #main-doc {
+    margin-left: -10px;
+  }
+
+  code {
+    margin-left: -20px;
+    width: 100%;
+    padding: 15px;
+    padding-left: 10px;
+    padding-right: 45px;
+    min-width: 233px;
+  }
+}
+
 
 </style>
 
-
-<header id="header">
-<div class="logo"><img id="header-img"
-	src="logo.png">
-
-</img>
-</div>
-<nav id="nav-bar">
-<ul>
-<li><a class="nav-link" href="#products">
- Products</a></li>
-<li><a class="nav-link" href="#price">
- Price</a></li>
-<li><a class="nav-link" href="#contact-us">
- Contact us</a></li>
-</ul>
+<nav id="navbar">
+  <header>Pages</header>
+  <ul>
+   <li><a class="nav-link" 
+href="#about">About</a></li>
+   <li><a class="nav-link"
+href="#contributors">Contributors</a></li>
+<li><a class="nav-link"
+href="#work_in_progress">Work In Progress</a></li>
+<li><a class="nav-link"
+href="#from_the_collections">From the Collections</a></li>
+<li><a class="nav-link"
+href="#5_minutes">5 Minutes with...</a></li>
+<li><a class="nav-link"
+href="#interviews">Interviews</a></li>
+<li><a class="nav-link"
+href="#fashion_now">Fashion Now</a></li>
+<li><a class="nav-link"
+href="#commentary">Commentary</a></li>
+  </ul>
 </nav>
-</header>
 
-<div class="space"></div>
+<main id="main-doc">
+  <section class="main-section"
+id="about">
+    <header>About</header>
+    <article>
+      <p>This is a blog that documents fashion – as image, as object, as text, as an experience, 
+and as an industry.</p>
+      <p>Written by Rebecca Arnold, Lecturer in History of Dress and Textiles, and current 
+postgraduate and research students of the history of dress at The Courtauld Institute of Art 
+in London, it provides a platform to show our current work, and our responses to dress-related 
+matters we see around us.</p>
+      <p>We aim to share our ideas, show you items from The Courtauld’s collections, and 
+generally discuss anything that we think is interesting and provocative about fashion now, 
+as well as in the past.</p>
+      <p>We will update regularly, with interviews, images and comments that analyse dress 
+history and encourage debate about what fashion is, was and will be.</p>
+    </article>
+  </section>
 
-<section id="ok">
-<form id="form" action="https://www.freecodecamp.com/email-submit">
-<input name="email"
-	id="email"
-	type="email"
-	placeholder="Enter your email "
-	required
-/>
-<input id="submit" type="submit" value="Let Us Go!"/>
-</form>
+<section class="main-section"
+id="contributors">
+    <header>Contributors</header>
+    <article>
+      <ul>
+        <li>Dr Rebecca Arnold</li>
+          <code
+        >function greetMe(yourName) { alert("Hello " + yourName); }
+        greetMe("World");
+           </code>
+        <li>Violet Caldecott</li>
+<code>var x = 42.</code>
+        <li>Bethan Eleri Carrick </li>
+<code> let y = 13.</code> 
+        <li>Lucy Corkish </li>
+      <code>if (true) { var x = 5; } console.log(x); // 5</code>
+
+        <li>Genevieve Davis</li>
+ <code
+        >if (true) { let y = 5; } console.log(y); // ReferenceError: y is not
+        defined</code>
+        <li>Simona Mezzina </li>
+      </ul>
+    </article>
 </section>
 
-<section id="products">
- <iframe
-        id="video"
-        height="315"
-        src="products.mp4"
-        frameborder="0"
-        allowfullscreen
-      ></iframe>
+<section class="main-section"
+id="work_in_progress">
+    <header>Work In Progress</header>
+    <article>
+      <p>Our research, our current ideas, and what we’re thinking about now. 
+To view ‘Work in Progress’ posts, click here.</p>
+    <img src="flower.jpg"></img>
+    </article>
 </section>
 
-<div class="container">
-<div id="price">
+<section class="main-section"
+id="from_the_collections">
+    <header>From The Collections</header>
+    <article>
+      <p>We analyse fashion and dress in relation to works from The Courtauld 
+Collections. To view ‘From the Collections’ posts, click here.</p>
+    <img src="person.jpg"></img>
+    </article>
+</section>
 
-<h1>Price</h1>
-<p>Fabric, pattern-making, sampling, trims, sewing, handwork, packaging, duties, shipping: This is an 
-incomplete list of what you’re paying for when you buy a new T-shirt. And that’s before a wholesale markup 
-(i.e., the profit a brand makes on the item) or the additional retail markup if you’re buying it in a store.
+<section class="main-section"
+id="5_minutes">
+    <header>5 Minutes With...</header>
+    <article>
+      <p>We interview people from The Courtauld about what they are wearing, 
+and how they interpret ‘fashion’. To view ‘5 Minutes With…’ posts, click here.
 </p>
+    <img src="women.jpg"></img>
+    </article>
+</section>
 
-</div>
-</div>
-
-<div class="container">
-<div id="contact-us">
-<h1>Contact Us</h1>
-<p>Read that again, and the idea of a T-shirt being “worth” $5 might seem preposterous, if not criminal. How is 
-it possible that all of those materials, logistics, and people amount to just dollars or cents? Many of those 
-costs are fixed; the price of cotton isn’t negotiable, even at scale. The person who made the T-shirt, on the 
-other hand, is a lot easier to exploit.
+<section class="main-section"
+id="interviews">
+    <header>Interviews</header>
+    <article>
+      <p>We talk to people who have something interesting to say about fashion and 
+dress. To view interviews, click here.
 </p>
-</div>
-</div>
+    <img src="two.jpg"></img>
+    </article>
+</section>
 
+<section class="main-section"
+id="fashion_now">
+    <header>Fashion Now</header>
+    <article>
+      <p>We discuss themes relating to the contemporary fashion industry. 
+To view ‘Fashion Now’ posts, click here.
+</p>
+    <img src="book.jpg"></img>
+    </article>
+</section>
 
+<section class="main-section"
+id="commentary">
+    <header>Commentary</header>
+    <article>
+      <p>Our comments on current or past events, projects, writings, and topics in dress history and fashion.
+ To view ‘Commentary’ posts, click here.
+</p>
+    <img src="twoback.jpg"></img>
+    </article>
+</section>
 </html>
