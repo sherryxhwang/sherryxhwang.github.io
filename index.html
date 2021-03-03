@@ -1,251 +1,202 @@
 <html>
- <style type="text/css">
-html,
-body {
-  min-width: 290px;
-  color: #4d4e53;
-  background-color: #ffffff;
-  font-family: 'Open Sans', Arial, sans-serif;
-  line-height: 1.5;
+<style tyle="text/CSS">
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
-
-#navbar {
-  position: fixed;
-  min-width: 290px;
-  top: 0px;
-  left: 0px;
-  width: 300px;
-  height: 100%;
-  border-right: solid;
-  border-color: rgba(0, 22, 22, 0.4);
-}
-
-header {
-  color: black;
-  margin: 10px;
-  text-align: center;
-  font-size: 1.8em;
-  font-weight: thin;
-}
-
-#main-doc header {
-  text-align: left;
-  margin: 0px;
-}
-
-#navbar ul {
-  height: 88%;
+* {
+  margin: 0;
   padding: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400;
+  line-height: 1.4;
+  color: white;
+}
+html {
+  box-sizing: border-box;
+
+  /* Set font size for easy rem calculations
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
-#navbar li {
-  color: #4d4e53;
-  border-top: 1px solid;
-  list-style: none;
-  position: relative;
+
+.nav{
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  display: flex;
+  justify-content:flex-end;
+  flex-direction: row;
+  background: red;
+z-index: 10;
+}
+.nav-list{
+display:flex;
+margin-right:2rem;
 }
 
-#navbar a {
+.nav-list a {
   display: block;
-  padding: 10px 30px;
-  color: #4d4e53;
+  font-size: 2.2rem;
+  padding: 2rem;
+}
+
+.nav-list a:hover {
+  background: blue;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
   text-decoration: none;
-  cursor: pointer;
+  color: white;
 }
-
-#main-doc {
-  position: absolute;
-  margin-left: 310px;
-  padding: 20px;
-  margin-bottom: 110px;
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: gray;
+  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
 }
-
-section article {
-  color: #4d4e53;
-  margin: 15px;
-  font-size: 0.96em;
-}
-
-section li {
-  margin: 15px 0px 0px 20px;
-}
-
-@media only screen and (max-width: 815px) {
-  /* For mobile phones: */
-  #navbar ul {
-    border: 1px solid;
-    height: 207px;
-  }
-
-  #navbar {
-    background-color: white;
-    position: absolute;
-    top: 0;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    max-height: 275px;
-    border: none;
-    z-index: 1;
-    border-bottom: 2px solid;
-  }
-
-  #main-doc {
-    position: relative;
-    margin-left: 0px;
-    margin-top: 270px;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  #main-doc {
-    margin-left: -10px;
-  }
-
-  code {
-    margin-left: -20px;
-    width: 100%;
-    padding: 15px;
-    padding-left: 10px;
-    padding-right: 45px;
-    min-width: 233px;
-  }
+.welcome h1{
+font-size: 5rem;
 }
 
 
+#projects{
+text-align: center;
+  padding: 10rem 2rem;
+  background-color: blue;
+}
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(120px,1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+.project-image {
+  height: calc(100% - 6.8rem);
+  width: 100%;
+  object-fit: cover;
+}
+.project-title {
+background: gray;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  font-size: 2rem;
+  padding: 2rem 0.5rem;
+}
+.project-header {
+  max-width: 350px;
+  margin: 0 auto 6rem auto;
+  border-bottom: 0.2rem solid white;
+  font-size: 5rem;
+}
+.show-all {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 2px;
+font-size: 3rem;
+  background: gray;
+  transition: background 0.3s ease-out;
+}
+
+.contact{
+  text-align: center;
+  padding: 10rem 2rem;
+  background-color: gray;
+}
+.contact-header{
+font-size: 6rem;
+}
+
+.footer{
+text-align: right;
+background-color: red;
+padding: 0rem 2rem;
+}
 </style>
 
-<nav id="navbar">
-  <header>Pages</header>
-  <ul>
-   <li><a class="nav-link" 
-href="#about">About</a></li>
-   <li><a class="nav-link"
-href="#contributors">Contributors</a></li>
-<li><a class="nav-link"
-href="#work_in_progress">Work In Progress</a></li>
-<li><a class="nav-link"
-href="#from_the_collections">From the Collections</a></li>
-<li><a class="nav-link"
-href="#5_minutes">5 Minutes with...</a></li>
-<li><a class="nav-link"
-href="#interviews">Interviews</a></li>
-<li><a class="nav-link"
-href="#fashion_now">Fashion Now</a></li>
-<li><a class="nav-link"
-href="#commentary">Commentary</a></li>
+
+
+
+<nav id="navbar" class="nav">
+  <ul class="nav-list">
+    <li><a href="#welcome">Welcome</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<main id="main-doc">
-  <section class="main-section"
-id="about">
-    <header>About</header>
-    <article>
-      <p>This is a blog that documents fashion – as image, as object, as text, as an experience, 
-and as an industry.</p>
-      <p>Written by Rebecca Arnold, Lecturer in History of Dress and Textiles, and current 
-postgraduate and research students of the history of dress at The Courtauld Institute of Art 
-in London, it provides a platform to show our current work, and our responses to dress-related 
-matters we see around us.</p>
-      <p>We aim to share our ideas, show you items from The Courtauld’s collections, and 
-generally discuss anything that we think is interesting and provocative about fashion now, 
-as well as in the past.</p>
-      <p>We will update regularly, with interviews, images and comments that analyse dress 
-history and encourage debate about what fashion is, was and will be.</p>
-    </article>
-  </section>
+<section id="welcome" class="welcome">
+  <h1>I am Lala</h1>
+  <p>A fashion designer</>
 
-<section class="main-section"
-id="contributors">
-    <header>Contributors</header>
-    <article>
-      <ul>
-        <li>Dr Rebecca Arnold</li>
-          <code
-        >function greetMe(yourName) { alert("Hello " + yourName); }
-        greetMe("World");
-           </code>
-        <li>Violet Caldecott</li>
-<code>var x = 42.</code>
-        <li>Bethan Eleri Carrick </li>
-<code> let y = 13.</code> 
-        <li>Lucy Corkish </li>
-      <code>if (true) { var x = 5; } console.log(x); // 5</code>
-
-        <li>Genevieve Davis</li>
- <code
-        >if (true) { let y = 5; } console.log(y); // ReferenceError: y is not
-        defined</code>
-        <li>Simona Mezzina </li>
-      </ul>
-    </article>
 </section>
 
-<section class="main-section"
-id="work_in_progress">
-    <header>Work In Progress</header>
-    <article>
-      <p>Our research, our current ideas, and what we’re thinking about now. 
-To view ‘Work in Progress’ posts, click here.</p>
-    <img src="flower.jpg"></img>
-    </article>
+
+<section id="projects" class="projects">
+  <h1 class="project-header">My Projects</h1>
+  <div class="projects-grid">
+    <a href="https://www.instyle.com/fashion">
+     <img class="project-image" src="devil.jpg"/>
+     <p class="project-title">Devil</p>
+    </a>
+    <a href="">
+     <img class="project-image" src="lockdown.jpg"/>
+     <p class="project-title">Lockdown</p>
+    </a>
+    <a href="">
+     <img class="project-image" src="rochestor.jpg"/>
+     <p class="project-title">Rochestor</p>
+    </a>
+    <a href="">
+     <img class="project-image" src="runway.png"/>
+     <p class="project-title">Runway</p>
+    </a>
+    <a href="">
+     <img class="project-image" src="spring.jpg"/>
+     <p class="project-title">Spring</p>
+    </a>
+    <a href="">
+     <img class="project-image" src="trend.jpg"/>
+     <p class="project-title">Trend</p>
+    </a>
+    
+  </div>
+  <div class="show-all">Show All </div>
 </section>
 
-<section class="main-section"
-id="from_the_collections">
-    <header>From The Collections</header>
-    <article>
-      <p>We analyse fashion and dress in relation to works from The Courtauld 
-Collections. To view ‘From the Collections’ posts, click here.</p>
-    <img src="person.jpg"></img>
-    </article>
+<section id="contact" class="contact">
+  <h1 class="contact-header">Contact</h1>
+  <h3>Phone Number</h3>
+  <p>123-456-7890</p>
+  <h3>Email</h3>
+  <p>xxxxxx@gmail.com</p>
+  <h3>Address</h3>
+  <p>1234 1st Street</p>
+  <p>city, NJ 12345</p>
 </section>
 
-<section class="main-section"
-id="5_minutes">
-    <header>5 Minutes With...</header>
-    <article>
-      <p>We interview people from The Courtauld about what they are wearing, 
-and how they interpret ‘fashion’. To view ‘5 Minutes With…’ posts, click here.
-</p>
-    <img src="women.jpg"></img>
-    </article>
-</section>
-
-<section class="main-section"
-id="interviews">
-    <header>Interviews</header>
-    <article>
-      <p>We talk to people who have something interesting to say about fashion and 
-dress. To view interviews, click here.
-</p>
-    <img src="two.jpg"></img>
-    </article>
-</section>
-
-<section class="main-section"
-id="fashion_now">
-    <header>Fashion Now</header>
-    <article>
-      <p>We discuss themes relating to the contemporary fashion industry. 
-To view ‘Fashion Now’ posts, click here.
-</p>
-    <img src="book.jpg"></img>
-    </article>
-</section>
-
-<section class="main-section"
-id="commentary">
-    <header>Commentary</header>
-    <article>
-      <p>Our comments on current or past events, projects, writings, and topics in dress history and fashion.
- To view ‘Commentary’ posts, click here.
-</p>
-    <img src="twoback.jpg"></img>
-    </article>
+<section id="footer" class="footer">
+<a href="https://github.com/sherryxhwang" class="profile-link"><h5>See my profile</h5></a>
 </section>
 </html>
